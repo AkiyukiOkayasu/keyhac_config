@@ -1,6 +1,5 @@
 import sys
 import os
-#import datetime
 
 import pyauto
 from keyhac import *
