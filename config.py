@@ -1,9 +1,7 @@
 import sys
 import os
-
 import pyauto
 from keyhac import *
-
 
 def configure(keymap):
     keymap_global = keymap.defineWindowKeymap()
