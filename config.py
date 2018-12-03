@@ -24,7 +24,7 @@ def configure(keymap):
     keymap.replaceKey("RAlt", 255)
 
     # カーソル
-    keymap_global[ "U0-U"] = "Up"
+    keymap_global[ "U0-P"] = "Up"
     keymap_global[ "U0-H"] = "Left"
     keymap_global[ "U0-N"] = "Down"
     keymap_global[ "U0-J"] = "Right"
@@ -40,8 +40,12 @@ def configure(keymap):
     # ウインドウ整列
     keymap_global["Ctrl-Shift-H"] = "Win-Left"
     keymap_global["Ctrl-Shift-J"] = "Win-Right"
-    keymap_global["Ctrl-Shift-U"] = "Win-Up"
+    keymap_global["Ctrl-Shift-P"] = "Win-Up"
     keymap_global["Ctrl-Shift-N"] = "Win-Down"
+    keymap_global["Ctrl-Shift-Left"] = "Win-Left"
+    keymap_global["Ctrl-Shift-Right"] = "Win-Right"
+    keymap_global["Ctrl-Shift-Up"] = "Win-Up"
+    keymap_global["Ctrl-Shift-Down"] = "Win-Down"
 
     # IME切り替え関数定義
     def ime_on():
