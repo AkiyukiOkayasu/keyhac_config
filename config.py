@@ -6,24 +6,16 @@ from keyhac import *
 def configure(keymap):
     keymap_global = keymap.defineWindowKeymap()
 
-    # L AltをL Ctrlにリマップ
-    keymap.replaceKey("LAlt", "LCtrl")
+    keymap.replaceKey("LAlt", "LCtrl") #L AltをL Ctrlにリマップ
+    keymap.replaceKey("LWin", "LAlt") #L WinをL Altにリマップ
 
-    # L WinをL Altにリマップ
-    keymap.replaceKey("LWin", "LAlt")
+    keymap.replaceKey("LCtrl", 235)#LCtrl（HHKBの左手小指側）を仮想キーコード235に割り当て
+    keymap.defineModifier(235, "User0")#仮想キーコード235をモディファイア"User0"に変更（HHKBの左手小指側）
+    keymap.defineModifier("CapsLock", "User0") #CapsLockをモディファイア"User0"に変更
+	
+    keymap.replaceKey("RAlt", "RCtrl")# R AltをR Ctrlにリマップ
 
-    # LCtrl（HHKBの左手小指側）を仮想キーコード235に割り当て
-    keymap.replaceKey("LCtrl", 235)
-    # 仮想キーコード235をモディファイア"User0"に変更（HHKBの左手小指側）
-    keymap.defineModifier(235, "User0")
-
-    # CapsLockをモディファイア"User0"に変更
-    keymap.defineModifier("CapsLock", "User0")
-
-    # R AltをRCtrlにリマップ
-    keymap.replaceKey("RAlt", "RCtrl")
-
-    # カーソル
+    # Emacsキーバインド
     keymap_global[ "U0-P"] = "Up"
     keymap_global[ "U0-H"] = "Left"
     keymap_global[ "U0-N"] = "Down"
@@ -35,10 +27,12 @@ def configure(keymap):
     keymap_global[ "U0-B"] = "Back"
 
     # ウインドウ整列
-    keymap_global["Ctrl-Alt-Left"] = "Win-Left"
-    keymap_global["Ctrl-Alt-Right"] = "Win-Right"
+    keymap_global["Alt-Left"] = "Win-Left"
+    keymap_global["Alt-Right"] = "Win-Right"
+    keymap_global["Alt-Up"] = "Win-Up"
+    keymap_global["Alt-Down"] = "Win-Down"
 
-    # IME切り替え関数定義
+    # IME切り替え関数
     def ime_on():
 	    keymap.wnd.setImeStatus( 1 )
 
