@@ -6,8 +6,8 @@ from keyhac import *
 def configure(keymap):
     keymap_global = keymap.defineWindowKeymap()
 
-    # L AltをR Ctrlにリマップ
-    keymap.replaceKey("LAlt", "RCtrl")
+    # L AltをL Ctrlにリマップ
+    keymap.replaceKey("LAlt", "LCtrl")
 
     # L WinをL Altにリマップ
     keymap.replaceKey("LWin", "LAlt")
@@ -20,8 +20,8 @@ def configure(keymap):
     # CapsLockをモディファイア"User0"に変更
     keymap.defineModifier("CapsLock", "User0")
 
-    # R Altを仮想キーコード255に割り当て（かな変換専用）
-    keymap.replaceKey("RAlt", 255)
+    # R AltをRCtrlにリマップ
+    keymap.replaceKey("RAlt", "RCtrl")
 
     # カーソル
     keymap_global[ "U0-P"] = "Up"
@@ -34,18 +34,9 @@ def configure(keymap):
     keymap_global[ "U0-D"] = "Delete"
     keymap_global[ "U0-B"] = "Back"
 
-    # ラウンチャ
-    keymap_global[ "Ctrl-Space"] = "Win-S"
-
     # ウインドウ整列
-    keymap_global["Ctrl-Shift-H"] = "Win-Left"
-    keymap_global["Ctrl-Shift-J"] = "Win-Right"
-    keymap_global["Ctrl-Shift-P"] = "Win-Up"
-    keymap_global["Ctrl-Shift-N"] = "Win-Down"
-    keymap_global["Ctrl-Shift-Left"] = "Win-Left"
-    keymap_global["Ctrl-Shift-Right"] = "Win-Right"
-    keymap_global["Ctrl-Shift-Up"] = "Win-Up"
-    keymap_global["Ctrl-Shift-Down"] = "Win-Down"
+    keymap_global["Ctrl-Alt-Left"] = "Win-Left"
+    keymap_global["Ctrl-Alt-Right"] = "Win-Right"
 
     # IME切り替え関数定義
     def ime_on():
@@ -54,5 +45,5 @@ def configure(keymap):
     def ime_off():
 	    keymap.wnd.setImeStatus( 0 )
 
-    keymap_global[ "O-RCtrl" ] = ime_off # 英
-    keymap_global[ "O-(255)" ] = ime_on # かな
+    keymap_global[ "O-LCtrl" ] = ime_off # 英
+    keymap_global[ "O-RCtrl" ] = ime_on # かな
