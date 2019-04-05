@@ -19,7 +19,7 @@ def configure(keymap):
     keymap_global[ "U0-P"] = "Up"
     keymap_global[ "U0-B"] = "Left"
     keymap_global[ "U0-N"] = "Down"
-    keymap_global[ "U0-J"] = "Right"
+    keymap_global[ "U0-F"] = "Right"
     keymap_global[ "U0-A"] = "Home"# 行頭に移動
     keymap_global[ "U0-E"] = "End"# 行末に移動
     keymap_global[ "U0-K"] = "S-End","C-X"# 行末まで削除
