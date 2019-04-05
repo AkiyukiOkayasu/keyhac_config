@@ -17,20 +17,20 @@ def configure(keymap):
 
     # Emacsキーバインド
     keymap_global[ "U0-P"] = "Up"
-    keymap_global[ "U0-H"] = "Left"
+    keymap_global[ "U0-B"] = "Left"
     keymap_global[ "U0-N"] = "Down"
     keymap_global[ "U0-J"] = "Right"
     keymap_global[ "U0-A"] = "Home"# 行頭に移動
     keymap_global[ "U0-E"] = "End"# 行末に移動
     keymap_global[ "U0-K"] = "S-End","C-X"# 行末まで削除
     keymap_global[ "U0-D"] = "Delete"
-    keymap_global[ "U0-B"] = "Back"
+    keymap_global[ "U0-H"] = "Back"
 
     # ウインドウ整列
-    keymap_global["Alt-Left"] = "Win-Left"
-    keymap_global["Alt-Right"] = "Win-Right"
-    keymap_global["Alt-Up"] = "Win-Up"
-    keymap_global["Alt-Down"] = "Win-Down"
+    keymap_global["U0-Left"] = "Win-Left"
+    keymap_global["U0-Right"] = "Win-Right"
+    keymap_global["U0-Up"] = "Win-Up"
+    keymap_global["U0-Down"] = "Win-Down"
 
     # IME切り替え関数
     def ime_on():
