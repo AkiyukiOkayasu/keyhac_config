@@ -16,15 +16,15 @@ def configure(keymap):
     keymap.replaceKey("RAlt", "RCtrl")# R AltをR Ctrlにリマップ
 
     # Emacsキーバインド
-    keymap_global[ "U0-P"] = "Up"
-    keymap_global[ "U0-B"] = "Left"
-    keymap_global[ "U0-N"] = "Down"
-    keymap_global[ "U0-F"] = "Right"
-    keymap_global[ "U0-A"] = "Home"# 行頭に移動
-    keymap_global[ "U0-E"] = "End"# 行末に移動
-    keymap_global[ "U0-K"] = "S-End","C-X"# 行末まで削除
-    keymap_global[ "U0-D"] = "Delete"
-    keymap_global[ "U0-H"] = "Back"
+    keymap_global["U0-P"] = "Up"
+    keymap_global["U0-B"] = "Left"
+    keymap_global["U0-N"] = "Down"
+    keymap_global["U0-F"] = "Right"
+    keymap_global["U0-A"] = "Home"# 行頭に移動
+    keymap_global["U0-E"] = "End"# 行末に移動
+    keymap_global["U0-K"] = "S-End","C-X"# 行末まで削除
+    keymap_global["U0-D"] = "Delete"
+    keymap_global["U0-H"] = "Back"
 
     # ウインドウ整列
     keymap_global["U0-Left"] = "Win-Left"
@@ -32,12 +32,16 @@ def configure(keymap):
     keymap_global["U0-Up"] = "Win-Up"
     keymap_global["U0-Down"] = "Win-Down"
 
+    # スクリーンショット
+    keymap_global["Ctrl-Shift-3"] = "Alt-PrintScreen"# 最前面のアプリケーション全体
+    keymap_global["Ctrl-Shift-4"] = "Win-Shift-S"# 矩形選択
+
     # IME切り替え関数
     def ime_on():
-	    keymap.wnd.setImeStatus( 1 )
+	    keymap.wnd.setImeStatus(True)
 
     def ime_off():
-	    keymap.wnd.setImeStatus( 0 )
+	    keymap.wnd.setImeStatus(False)
 
-    keymap_global[ "O-LCtrl" ] = ime_off # 英
-    keymap_global[ "O-RCtrl" ] = ime_on # かな
+    keymap_global["O-LCtrl"] = ime_off
+    keymap_global["O-RCtrl"] = ime_on
